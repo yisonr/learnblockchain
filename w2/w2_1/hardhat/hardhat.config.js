@@ -4,7 +4,8 @@ let dotenv = require("dotenv")
 dotenv.config({path: "./.env"})
 
 const mnemonic= process.env.MNEMONIC
-const mumbaiApiKey = process.env.MUMBAI_APIKEY
+const goerliApikey = process.env.GOERLI_APIKEY
+// const mumbaiApiKey = process.env.MUMBAI_APIKEY
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -19,11 +20,16 @@ module.exports = {
 		  },
 		  chainId: 80001,
 	  },
+	  goerli: {
+		  url: "https://endpoints.omniatech.io/v1/eth/goerli/public",
+		  accounts: {
+			  mnemonic: mnemonic, 
+		  },
+		  chainId: 5,
+	  }
   },
   etherscan: { // 开源到区块链浏览器的配置
-    apiKey: {
-          polygonMumbai: mumbaiApiKey, // 测试网对应的主网浏览器申请 apiKey
-    },
-  }
+    apiKey: goerliApikey,
+  },
 }
 
