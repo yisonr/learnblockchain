@@ -21,7 +21,8 @@ module.exports = {
 		  chainId: 80001,
 	  },
 	  goerli: {
-		  url: "https://endpoints.omniatech.io/v1/eth/goerli/public",
+		  url:'https://eth-goerli.api.onfinality.io/public',
+		  // url: "https://endpoints.omniatech.io/v1/eth/goerli/public",
 		  accounts: {
 			  mnemonic: mnemonic, 
 		  },
